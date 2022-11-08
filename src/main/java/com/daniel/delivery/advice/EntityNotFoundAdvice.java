@@ -1,6 +1,5 @@
 package com.daniel.delivery.advice;
 
-import com.daniel.delivery.exception.CourierNotFoundException;
 import com.daniel.delivery.exception.OrderNotFoundException;
 import com.daniel.delivery.exception.PersonNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 class EntityNotFoundAdvice {
 
     @ResponseBody
-    @ExceptionHandler({OrderNotFoundException.class, PersonNotFoundException.class, CourierNotFoundException.class})
+    @ExceptionHandler({OrderNotFoundException.class, PersonNotFoundException.class})
     @ResponseStatus(HttpStatus.NOT_FOUND)
     String entityNotFoundHandler(Exception ex) {
         return ex.getMessage();

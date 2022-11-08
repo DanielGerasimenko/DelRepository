@@ -1,35 +1,20 @@
 --liquibase formatted sql
---changeset daniel:init_db logicalFilePath:/
 
-create table person
+--changeset clondaic:1
+CREATE TABLE IF NOT EXISTS person
 (
-    id         bigserial    not null
-        constraint person_pkey
-            primary key,
-    first_name varchar(128) not null,
-    last_name  varchar(128) not null,
-    address    varchar(256) not null
+    id BIGSERIAL PRIMARY KEY ,
+    username VARCHAR(64) NOT NULL UNIQUE ,
+    birth_date DATE,
+    firstname VARCHAR(64),
+    lastname VARCHAR(64),
+    role VARCHAR(32)
 );
 
-create table courier
+--changeset clondaic:2
+CREATE TABLE orders
 (
-    id         bigserial    not null
-        constraint courier_pkey
-            primary key,
-    first_name varchar(128) not null,
-    last_name  varchar(128) not null
-);
-create table orders
-(
-    id         bigserial    not null
-        constraint orders_pkey
-            primary key,
-    product    varchar(256) not null,
-    date_order date         not null,
-    person_id  bigint       not null
-        constraint orders_person_id_fkey
-            references person,
-    courier_id bigint       not null
-        constraint orders_courier_id_fkey
-            references courier
+    id BIGSERIAL PRIMARY KEY ,
+    product VARCHAR(256) NOT NULL ,
+    status VARCHAR(64)
 );

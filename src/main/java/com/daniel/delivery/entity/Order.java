@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Data
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "orders")
-public class Order implements BaseEntity<Long> {
+public class Order extends AuditingEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,14 +22,9 @@ public class Order implements BaseEntity<Long> {
 
     private String product;
 
-    @CreationTimestamp
-    private LocalDateTime dateOrder;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
-    @ManyToOne()
-    @JoinColumn(name = "person_id")
-    private Person person;
+    private String address;
 
-    @ManyToOne()
-    @JoinColumn(name = "courier_id")
-    private Courier courier;
 }
