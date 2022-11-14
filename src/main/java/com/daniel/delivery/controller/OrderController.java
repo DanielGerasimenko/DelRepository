@@ -2,13 +2,9 @@ package com.daniel.delivery.controller;
 
 import com.daniel.delivery.dto.OrderCreateEditDto;
 import com.daniel.delivery.dto.OrderReadDto;
-import com.daniel.delivery.dto.PersonCreateEditDto;
-import com.daniel.delivery.dto.PersonReadDto;
 import com.daniel.delivery.service.OrderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 

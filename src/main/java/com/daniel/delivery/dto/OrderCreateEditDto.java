@@ -1,7 +1,6 @@
 package com.daniel.delivery.dto;
 
 import com.daniel.delivery.entity.Status;
-import lombok.Data;
 import lombok.Value;
 import lombok.experimental.FieldNameConstants;
 

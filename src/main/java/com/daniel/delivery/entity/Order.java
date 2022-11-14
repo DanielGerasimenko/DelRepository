@@ -3,11 +3,8 @@ package com.daniel.delivery.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.time.Instant;
-import java.time.LocalDateTime;
 
 @Data
 @Entity

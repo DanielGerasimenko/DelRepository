@@ -13,4 +13,13 @@ spring:
     url: "jdbc:postgresql://localhost:5432/postgres"
     database-change-log-table: delivery_databaseChangeLog
     database-change-log-lock-table: delivery_databaseChangeLogLock
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 557452579624-j9dsl89dq8s2jl6182bmjgt42rsiudbl.apps.googleusercontent.com
+            clientSecret: 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
+            redirectUri: http://localhost:8080/login/oauth2/code/google
+            scope: openid,email,profile
 

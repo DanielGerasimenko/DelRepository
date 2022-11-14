@@ -28,14 +28,13 @@ dependencies {
 	implementation 'io.springfox:springfox-swagger2:3.0.0'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 
-	// https://mvnrepository.com/artifact/org.testcontainers/junit-jupiter
+	implementation 'org.springframework.security:spring-security-oauth2-client'
+	implementation 'org.springframework.security:spring-security-oauth2-jose'
+
 	testImplementation 'org.testcontainers:junit-jupiter:1.17.3'
-	// https://mvnrepository.com/artifact/org.testcontainers/postgresql
 	testImplementation 'org.testcontainers:postgresql:1.17.3'
-	// https://mvnrepository.com/artifact/org.testcontainers/testcontainers
 	testImplementation 'org.testcontainers:testcontainers:1.17.3'
 
-	// https://mvnrepository.com/artifact/org.springframework.data/spring-data-envers
 	implementation group: 'org.springframework.data', name: 'spring-data-envers', version: '2.7.5'
 
 
