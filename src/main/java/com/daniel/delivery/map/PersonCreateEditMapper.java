@@ -32,7 +32,7 @@ public class PersonCreateEditMapper implements Mapper<PersonCreateEditDto, Perso
         person.setUsername(object.getUsername());
         person.setFirstname(object.getFirstname());
         person.setLastname(object.getLastname());
-        person.setBirthDate(object.getBirthDate());
+        person.setBirthdate(object.getBirthdate());
         person.setRole(object.getRole());
 
         Optional.ofNullable(object.getRawPassword())

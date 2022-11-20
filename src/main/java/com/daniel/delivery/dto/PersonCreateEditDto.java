@@ -22,7 +22,7 @@ public class PersonCreateEditDto {
     String rawPassword;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    LocalDate birthDate;
+    LocalDate birthdate;
 
     @Size(min = 3, max = 64)
     String firstname;

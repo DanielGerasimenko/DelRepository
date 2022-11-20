@@ -1,6 +1,6 @@
 --liquibase formatted sql
 
---changeset clondaic:1
+--changeset clondaic:3
 ALTER TABLE person
     ADD COLUMN created_at TIMESTAMP;
 

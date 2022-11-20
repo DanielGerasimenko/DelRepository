@@ -31,29 +31,27 @@ public class PersonController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
     public PersonReadDto createPerson(@RequestBody PersonCreateEditDto personCreateEditDto) {
         return personService.createPerson(personCreateEditDto);
     }
 
     @GetMapping("/{id}")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
-    public Optional<PersonReadDto> getPerson(@PathVariable("id") Long id,
-                                             @AuthenticationPrincipal UserDetails userDetails) {
+    public Optional<PersonReadDto> getPerson(@PathVariable("id") Long id) {
         return personService.getPersonById(id);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
     public Optional<PersonReadDto> updatePerson(@PathVariable Long id, @RequestBody PersonCreateEditDto personDto) {
        return personService.updatePersonById(id, personDto);
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public String deletePerson(@PathVariable("id") Long id) {
-        if (!personService.deletePersonById(id)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        }
-        return "Delete is OK";
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public void deletePerson(@PathVariable("id") Long id) {
+        personService.deletePersonById(id);
     }
 }

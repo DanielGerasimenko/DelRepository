@@ -8,4 +8,5 @@
     <include file="sql/V2_init_db.sql" relativeToChangelogFile="true"/>
     <include file="sql/V3_init_db.sql" relativeToChangelogFile="true"/>
     <include file="sql/V4_init_db.sql" relativeToChangelogFile="true"/>
+    <include file="sql/V5_init_db.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>

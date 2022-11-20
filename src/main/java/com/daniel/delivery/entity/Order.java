@@ -17,6 +17,8 @@ public class Order extends AuditingEntity<Long> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long personId;
+
     private String product;
 
     @Enumerated(EnumType.STRING)

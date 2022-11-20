@@ -15,4 +15,6 @@ public class OrderCreateEditDto {
     private Status status;
 
     private String address;
+
+    private Long personId;
 }

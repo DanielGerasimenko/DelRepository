@@ -23,3 +23,6 @@ spring:
             redirectUri: http://localhost:8080/login/oauth2/code/google
             scope: openid,email,profile
 
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG

@@ -22,25 +22,23 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springdoc:springdoc-openapi-ui:1.6.4'
-	implementation 'org.modelmapper:modelmapper:3.1.0'
-	implementation 'org.liquibase:liquibase-core:4.7.1'
-	implementation 'io.springfox:springfox-swagger2:3.0.0'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 	implementation 'org.springframework.security:spring-security-oauth2-client'
 	implementation 'org.springframework.security:spring-security-oauth2-jose'
 
-	testImplementation 'org.testcontainers:junit-jupiter:1.17.3'
-	testImplementation 'org.testcontainers:postgresql:1.17.3'
-	testImplementation 'org.testcontainers:testcontainers:1.17.3'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.12'
+	implementation 'org.liquibase:liquibase-core:4.17.2'
+
+	testImplementation 'org.testcontainers:junit-jupiter:1.17.4'
+	testImplementation 'org.testcontainers:postgresql:1.17.4'
+	testImplementation 'org.testcontainers:testcontainers:1.17.4'
 
 	implementation group: 'org.springframework.data', name: 'spring-data-envers', version: '2.7.5'
 
-
-	compileOnly 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok:1.18.22'
+	annotationProcessor 'org.projectlombok:lombok:1.18.22'
 	runtimeOnly 'org.postgresql:postgresql'
-	annotationProcessor 'org.projectlombok:lombok'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 

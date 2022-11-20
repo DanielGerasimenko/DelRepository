@@ -29,7 +29,7 @@ public class Person extends AuditingEntity<Long> {
     @Column(unique = true, nullable = false)
     private String username;
 
-    private LocalDate birthDate;
+    private LocalDate birthdate;
 
     private String firstname;
 

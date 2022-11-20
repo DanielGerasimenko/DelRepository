@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional
+@Transactional(readOnly = true)
 public class PersonService implements UserDetailsService {
 
     private final PersonRepository personRepository;
@@ -56,19 +56,13 @@ public class PersonService implements UserDetailsService {
                 .map(entity -> {
                     return personCreateEditMapper.map(personDto, entity);
                 })
-                .map(personRepository::saveAndFlush)
+                .map(personRepository::save)
                 .map(personReadMapper::map);
     }
 
     @Transactional
-    public boolean deletePersonById(Long id) {
-        return personRepository.findById(id)
-                .map(person -> {
-                    personRepository.delete(person);
-                    personRepository.flush();
-                    return true;
-                })
-                .orElse(false);
+    public void deletePersonById(Long id) {
+        personRepository.deleteById(id);
     }
 
     @Override

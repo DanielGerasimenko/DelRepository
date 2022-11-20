@@ -1,18 +1,23 @@
 --liquibase formatted sql
 
---changeset clondaic:1
+--changeset clondaic:8
 ALTER TABLE orders
-    ADD COLUMN created_at TIMESTAMP;
+    ADD COLUMN IF NOT EXISTS created_at TIMESTAMP;
 
 ALTER TABLE orders
-    ADD COLUMN modified_at TIMESTAMP;
+    ADD COLUMN IF NOT EXISTS modified_at TIMESTAMP;
 
 ALTER TABLE orders
-    ADD COLUMN created_by VARCHAR(32);
+    ADD COLUMN IF NOT EXISTS created_by VARCHAR(32);
 
 ALTER TABLE orders
-    ADD COLUMN modified_by VARCHAR(32);
+    ADD COLUMN IF NOT EXISTS modified_by VARCHAR(32);
 
 ALTER TABLE orders
-ADD COLUMN address VARCHAR(256) ;
+    ADD COLUMN IF NOT EXISTS address VARCHAR(256);
 
+ALTER TABLE orders
+    ADD COLUMN IF NOT EXISTS person_id BIGINT;
+
+ALTER TABLE orders
+    ADD CONSTRAINT person_id_fk FOREIGN KEY (person_id) REFERENCES person (id);
